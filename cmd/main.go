@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+
 	"github.com/joaofreitas21/waggis/handlers"
-	"github.com/joaofreitas21/waggis/views" 
+	"github.com/joaofreitas21/waggis/views"
 	"github.com/joho/godotenv"
 )
 
@@ -20,10 +21,17 @@ func main() {
 	// Serve static files
 	fs := http.FileServer(http.Dir(filepath.Join(".", "static")))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	
 
 	http.HandleFunc("/api/ip", handlers.GetIP)
 
 	http.HandleFunc("/card", handlers.ServeCard)
+
+	http.HandleFunc("/api/email", handlers.SendEmail)
+
+	http.HandleFunc("/email-form", func(w http.ResponseWriter, r *http.Request) {
+		views.EmailForm().Render(r.Context(), w)
+	})
 
 	// Serve landing page at "/"
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {

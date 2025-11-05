@@ -2,7 +2,7 @@ package views
 
 templ Landing() {
 	<!DOCTYPE html>
-	<html lang="en" class="bg-black h-screen">
+	<html lang="en" class="bg-black h-screen overflow-hidden">
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,7 +13,7 @@ templ Landing() {
 			<script src="/static/encom-globe.js"></script>
 			<link href="/static/styles.css" rel="stylesheet"/>
 		</head>
-		<body class="bg-black h-screen font-mono">
+		<body class="bg-black h-screen font-mono overflow-hidden">
 			<div id="waggis-container" class="fixed inset-0 flex items-center justify-center pointer-events-none">
 				<span
 					id="waggis-text"
@@ -22,9 +22,9 @@ templ Landing() {
 				></span>
 				
 			</div>
-			<div id="main-content" class="flex flex-col items-center justify-center opacity-0 transition-opacity duration-700 mt-20">
+			<div id="main-content" class="flex flex-col items-center justify-center opacity-0 transition-opacity duration-700 mt-20 max-h-screen">
 				<div class="text-white text-lg text-center">
-					I'm a 25 year-old developer
+					I'm a 25 year-old developer,
 					<br/>
 					<div id="tech-line" class="relative">
 						who uses <span class="text-green-400 tech-clickable cursor-pointer underline decoration-2 underline-offset-4 hover:decoration-4 transition" data-key="nodejs" data-color="text-green-400">Node.JS</span>,
@@ -33,18 +33,19 @@ templ Landing() {
 						and <span class="text-yellow-400 tech-clickable cursor-pointer underline decoration-2 underline-offset-4 hover:decoration-4 transition" data-key="others" data-color="text-yellow-400">others</span>.
 						
 					</div>
-					<!-- Slot where the card will render -->
+					
 					<div id="card-slot" class="w-full flex justify-center mt-20 hidden"></div>
 
-					<div id="info-line" class="mt-6">
+					<div id="info-line" class="mt-4">
 						<br/>
-						<span>Check out my <a href="https://github.com/joaofreitas21/waggis" class="text-gray-300 underline">GitHub</a> and <span class="text-gray-300 underline">Twitter</span>.</span>
+						<span>Check out my <a href="https://github.com/joaofreitas21" target="_blank" class="text-gray-400 tech-clickable cursor-pointer underline decoration-2 underline-offset-4 hover:decoration-4 transition">GitHub</a>.</span>
 						<br/>
 						<br/>
 						I was last seen working on <span class="text-gray-300">HASLAB</span>.
 						<br/>
-						Business inquiry? <span class="text-gray-300 underline">Email me!</span>
+						Business inquiry? <span class="text-purple-400 email-clickable cursor-pointer underline decoration-2 underline-offset-4 hover:decoration-4 transition" data-action="email" data-color="text-purple-400">Email me!</span>
 					</div>
+					<div id="email-form-slot" class="w-full flex justify-center mt-8 hidden"></div>
 				</div>
 			</div>
 
@@ -56,6 +57,7 @@ templ Landing() {
 			<script src="/static/animation.js"></script>
 			<script src="/static/globe.js"></script>
 			<script src="/static/cards.js"></script>
+			<script src="/static/email.js"></script>
 		</body>
 	</html>
 }

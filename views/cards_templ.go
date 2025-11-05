@@ -29,7 +29,7 @@ func Card(title string, description string, icons []string, github string) templ
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"card-frame bg-black/70 border-2 border-current rounded-xl p-12 w-full mt-8 max-w-7xl min-h-[30rem] flex flex-col items-center shadow-xl m-2\"><h2 class=\"text-3xl font-mono text-white text-center mb-6 underline decoration-current\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"card-frame bg-black/70 border-2 border-current rounded-xl p-8 w-full mt-8 max-w-7xl min-h-[30rem] flex flex-col items-center shadow-xl m-2\"><h2 class=\"text-3xl font-mono text-white text-center mb-6 underline decoration-current\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
