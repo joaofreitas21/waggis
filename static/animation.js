@@ -36,7 +36,7 @@ function moveToTop() {
     text.classList.remove('text-6xl');
     text.classList.add('text-3xl');
     text.style.transition = "all 0.7s cubic-bezier(0.4,0,0.2,1)";
-    text.style.transform = "translateY(-45vh)"; 
+    text.style.transform = "translateY(-45vh)";
 
     setTimeout(() => {
         const mainContent = document.getElementById('main-content');
@@ -44,6 +44,12 @@ function moveToTop() {
             mainContent.classList.remove('opacity-0');
             mainContent.classList.add('opacity-100');
         }
-        // Do NOT change the container's class or positioning!
+
+        if(typeof showGlobe === 'function') {
+            setTimeout(() => {
+                showGlobe();
+            }, 500);
+        }
+        
     }, 700);
 }

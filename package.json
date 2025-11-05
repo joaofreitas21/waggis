@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/joaofreitas21/waggis#readme",
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.10"
+    "@tailwindcss/vite": "^4.1.10",
+    "encom-globe": "^0.5.4"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

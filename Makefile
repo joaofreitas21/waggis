@@ -10,11 +10,11 @@ css:
 
 # Build Go binary
 build: templ
-	go build -o tmp/main.exe ./cmd/main.go
+	go build -o bin/main.exe ./cmd/main.go
 
 # Run the server (no live reload)
 run: build
-	./tmp/main.exe
+	./bin/main.exe
 
 # Live reload with Air (needs .air.toml configured)
 dev: templ

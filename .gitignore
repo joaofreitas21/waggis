@@ -1,5 +1,6 @@
 .cursor/
 node_modules/
-tmp/
+bin/
 tailwindcss
+.env
 
