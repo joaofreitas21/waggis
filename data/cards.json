@@ -1,0 +1,42 @@
+{
+    "nodejs": {
+        "title": "Node.JS",
+        "github": "https://github.com/joaofreitas21/node-project",
+        "description": "Node.js® is a JavaScript runtime built on Chrome's V8 engine, designed to build scalable network applications efficiently.",
+        "icons": [
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png"
+        ]
+    },
+    "flutter": {
+        "title": "Flutter",
+        "github": "https://github.com/joaofreitas21/flutter-project",
+        "description": "Flutter is Google UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+        "icons": [
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png"
+        ]
+    },
+    "htmlcssjs": {
+        "title": "HTML/CSS/JS",
+        "github": "",
+        "description": "The essential trio for web development: HTML for structure, CSS for styling, JavaScript for interactivity. Used in all modern websites.",
+        "icons": [
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png"
+        ]
+    },
+    "others": {
+        "title": "Other Technologies",
+        "github": "",
+        "description": "Other tools and libraries I use often: Docker, PostgreSQL, Go, Templ, Tailwind, Linux CLI, and more.",
+        "icons": [
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png",
+            "/static/icons/github-mark-white.png"
+        ]
+    }
+}

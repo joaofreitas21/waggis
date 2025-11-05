@@ -23,6 +23,8 @@ func main() {
 
 	http.HandleFunc("/api/ip", handlers.GetIP)
 
+	http.HandleFunc("/card", handlers.ServeCard)
+
 	// Serve landing page at "/"
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		views.Landing().Render(r.Context(), w)
