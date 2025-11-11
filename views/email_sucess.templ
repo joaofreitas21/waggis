@@ -1,0 +1,15 @@
+package views
+
+templ EmailSuccessCard(message string) {
+  <div class="email-message-card bg-white/10 border border-color-green rounded-lg p-6 flex flex-col items-center gap-4 max-w-2xl shadow-lg pointer-events-auto">
+    <img src="/static/icons/correct_12289287.png" alt="Success" class="w-20 h-20" />
+    <p class="text-white font-mono text-center">{message}</p>
+    <button
+      type="button"
+      onclick="closeEmailMessage()"
+      class="text-white/70 hover:text-white font-mono underline mt-1"
+    >
+      Close
+    </button>
+  </div>
+}

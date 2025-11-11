@@ -1,0 +1,20 @@
+package views
+
+templ EmailErrorCard(message string, retryAfter int) {
+  <div class="email-message-card bg-white/10 border border-color-red rounded-lg p-6 flex flex-col items-center gap-4 max-w-2xl shadow-lg pointer-events-auto">
+    <img src="/static/icons/sent_17878409.png" alt="Error" class="w-20 h-20" />
+    <p class="text-white font-mono text-center">{message}</p>
+    if retryAfter > 0 {
+      <p class="text-white/70 font-mono text-sm text-center">
+        Retry after { retryAfter } seconds
+      </p>
+    }
+    <button
+      type="button"
+      onclick="closeEmailMessage()"
+      class="text-white/70 hover:text-white font-mono underline mt-1"
+    >
+      Close
+    </button>
+  </div>
+}

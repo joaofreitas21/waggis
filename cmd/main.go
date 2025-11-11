@@ -29,6 +29,12 @@ func main() {
 
 	http.HandleFunc("/api/email", handlers.SendEmail)
 
+	http.HandleFunc("/card/item", handlers.ServeCardItem);
+
+	http.HandleFunc("/email-form/success", handlers.ServeEmailSuccessCard)
+
+	http.HandleFunc("/email-form/error", handlers.ServeEmailErrorCard)
+
 	http.HandleFunc("/email-form", func(w http.ResponseWriter, r *http.Request) {
 		views.EmailForm().Render(r.Context(), w)
 	})
@@ -40,8 +46,8 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8081"
+		port = "8080"
 	}
-	log.Printf("Server running on http://localhost:%s", port)
+	//log.Printf("Server running on http://localhost:%s", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

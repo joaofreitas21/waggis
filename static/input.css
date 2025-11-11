@@ -1,3 +1,211 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.group:hover .group-hover\:shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+.leading-125 {
+  line-height: 1.25rem;
+}
+
+.animate-fadein {
+  animation: fadein 0.2s ease-out;
+}
+
+
+.item-card-overlay {
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.email-message-card {
+  animation: fadeInScale 0.3s ease-out;
+  backdrop-filter: blur(4px);
+  pointer-events: auto !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  position: relative;
+  z-index: 100;
+}
+
+.email-message-card button {
+  pointer-events: auto !important;
+  cursor: pointer;
+  z-index: 101;
+  position: relative;
+}
+
+.email-message-card img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+
+@media (max-height: 920px) {
+  body {
+    overflow: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  #waggis-text {
+    font-size: 1.75rem;
+  }
+}
+
+.mini-card-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.globe-responsive {
+  transform-origin: center top;
+}
+
+@media (max-width: 1024px) {
+  .globe-responsive {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 420px) {
+  .globe-responsive {
+    transform: scale(0.78);
+  }
+}
+
+.mt-18 {
+  margin-top: 4.5rem;
+}
+
+
+.email-form-frame.responsive {
+  transition: padding 0.2s ease, max-height 0.2s ease;
+}
+
+.email-form-frame.responsive .email-form-heading {
+  transition: font-size 0.2s ease, margin 0.2s ease;
+}
+
+.email-form-frame.responsive .email-form {
+  transition: gap 0.2s ease;
+}
+
+.email-form-frame.responsive input,
+.email-form-frame.responsive textarea,
+.email-form-frame.responsive button,
+.email-form-frame.responsive label {
+  transition: all 0.2s ease;
+}
+
+@media (max-height: 900px) {
+  .email-form-frame.responsive {
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .email-form-frame.responsive .email-form-heading {
+    margin-bottom: 0.75rem;
+  }
+
+  .email-form-frame.responsive .email-form {
+    gap: 0.55rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .email-form-frame.responsive label {
+    margin-bottom: 0.25rem;
+  }
+
+
+  .email-form-frame.responsive textarea,
+  .email-form-frame.responsive .email-textarea {
+    min-height: 90px;
+  }
+
+  .email-form-frame.responsive button {
+    padding-bottom: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-height: 820px) {
+  .email-form-frame.responsive {
+    max-height: calc(100vh - 90px);
+  }
+
+  .email-form-frame.responsive .email-form-heading {
+    margin-bottom: 0.6rem;
+  }
+
+  .email-form-frame.responsive .email-form {
+    gap: 0.45rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .email-form-frame.responsive textarea,
+  .email-form-frame.responsive .email-textarea {
+    min-height: 80px;
+  }
+
+
+  .email-form-frame.responsive button {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-height: 760px) {
+  .email-form-frame.responsive {
+    
+    max-height: calc(100vh - 80px);
+  }
+
+  .email-form-frame.responsive .email-form-heading {
+    margin-bottom: 0.5rem;
+  }
+
+  .email-form-frame.responsive .email-form {
+    gap: 0.4rem;
+  }
+
+  .email-form-frame.responsive textarea,
+  .email-form-frame.responsive .email-textarea {
+    min-height: 70px;
+  }
+
+
+  .email-form-frame.responsive button {
+    padding-bottom: 0;
+  }
+}

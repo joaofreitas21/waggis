@@ -36,7 +36,7 @@ function initGlobe() {
   container.appendChild(globeInstance.domElement);
 
   globeInstance.init(function() {
-    console.log("Globe started");
+    //console.log("Globe started");
     animate();
 
     setTimeout(() => {
@@ -81,11 +81,12 @@ async function fetchUserMarker() {
             throw new Error("Failed to fetch user marker IP data");
         }
         const data = await response.json();
+        //console.log(data);
 
         if(data.longitude && data.latitude) {
             const label = data.ip || "Unknown IP Address"
             addMarker(data.latitude, data.longitude, label);
-            console.log(`User marker added at${data.latitude}, ${data.longitude} with IP: ${label}`);
+            //console.log(`User marker added at${data.latitude}, ${data.longitude} with IP: ${label}`);
         }
         
     } catch (error) {
@@ -128,7 +129,7 @@ function addRandomSatellites(count){
         };
 
         globeInstance.addSatellite(lat,lon,altitude,options);
-        console.log(`Satellite ${i + 1} added at ${lat.toFixed(2)}, ${lon.toFixed(2)} with altitude ${altitude.toFixed(2)}`);
+        //console.log(`Satellite ${i + 1} added at ${lat.toFixed(2)}, ${lon.toFixed(2)} with altitude ${altitude.toFixed(2)}`);
     }
 }
 

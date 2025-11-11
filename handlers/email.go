@@ -4,10 +4,11 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	
+	"strconv"
 
 	"github.com/joaofreitas21/waggis/models"
 	"github.com/joaofreitas21/waggis/services"
+	"github.com/joaofreitas21/waggis/views"
 )
 
 // EmailResponse represents the JSON response for email submission
@@ -108,8 +109,34 @@ func SendEmail(w http.ResponseWriter, r *http.Request) {
 	// Success response
 	response := EmailResponse{
 		Success: true,
-		Message: "Email sent successfully!",
+		Message: "Thanks for reaching out, I will be in contact soon!",
+		
 	}
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(response)
+}
+
+func ServeEmailSuccessCard(w http.ResponseWriter, r *http.Request) {
+	message := r.URL.Query().Get("message")
+	if message == "" {
+		message = "Email sent successfully!"
+	}
+	
+	views.EmailSuccessCard(message).Render(r.Context(), w)
+}
+
+func ServeEmailErrorCard(w http.ResponseWriter, r *http.Request) {
+	message := r.URL.Query().Get("message")
+	if message == "" {
+		message = "Failed to send email. Please try again."
+	}
+	
+	retryAfter := 0
+	if retryStr := r.URL.Query().Get("retry_after"); retryStr != "" {
+		if retry, err := strconv.Atoi(retryStr); err == nil {
+			retryAfter = retry
+		}
+	}
+	
+	views.EmailErrorCard(message, retryAfter).Render(r.Context(), w)
 }
