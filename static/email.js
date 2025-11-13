@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   let isEmailFormOpen = false;
 
+
   // Handle click on "Email me!" button
   document.body.addEventListener("click", async function (e) {
     const emailBtn = e.target.closest("[data-action='email']");
@@ -77,19 +78,19 @@ async function submitEmailForm(event) {
 
   const form = document.getElementById("email-contact-form");
   const submitBtn = document.getElementById("email-submit-btn");
-  // Use the global message slot from landing page (not inside form)
+  
   const messageSlot = document.getElementById("email-message-slot");
 
   if (!form || !submitBtn || !messageSlot) return;
 
-  // Clear previous messages
+  
   closeEmailMessage();
 
   // Disable submit button and show loading state
   submitBtn.disabled = true;
   submitBtn.textContent = "Sending...";
 
-  // Collect form data
+  
   const formData = {
     name: document.getElementById("email-name").value.trim(),
     email: document.getElementById("email-email").value.trim(),

@@ -9,7 +9,6 @@ import (
 	"golang.org/x/time/rate"
 )
 
-// RateLimiter manages rate limiting per IP address using token bucket algorithm
 type RateLimiter struct {
 	clients map[string]*clientLimiter
 	mu      sync.RWMutex
@@ -17,14 +16,13 @@ type RateLimiter struct {
 	burst   int
 }
 
-// clientLimiter holds a rate limiter per client
+
 type clientLimiter struct {
 	limiter  *rate.Limiter
 	lastSeen time.Time
 }
 
 var (
-	// Global rate limiter instance
 	globalLimiter *RateLimiter
 	once          sync.Once
 )
@@ -32,14 +30,13 @@ var (
 // GetRateLimiter returns the single rate limiter instance
 func GetRateLimiter() *RateLimiter {
 	once.Do(func() {
-		// Get rate limit config from env, default: 3 requests per 15 minutes
+		// Get rate limit config from env
 		limitPerWindow := getEnvInt("EMAIL_RATE_LIMIT", 3)
 		windowMinutes := getEnvInt("EMAIL_RATE_WINDOW_MINUTES", 15)
 
 		// Calculate rate: requests per second
-		// e.g., 3 requests per 15 minutes = 3 / (15 * 60) = 0.0033... per second
 		requestsPerSecond := float64(limitPerWindow) / float64(windowMinutes*60)
-		burst := limitPerWindow // Allow burst up to the limit
+		burst := limitPerWindow 
 
 		globalLimiter = &RateLimiter{
 			clients: make(map[string]*clientLimiter),
@@ -54,7 +51,6 @@ func GetRateLimiter() *RateLimiter {
 }
 
 // Allow checks if the request from the given IP is allowed
-// Returns true if allowed, false if rate limited
 // Also returns the time until next token is available if rate limited
 func (rl *RateLimiter) Allow(ip string) (allowed bool, retryAfter time.Duration) {
 	rl.mu.Lock()
@@ -78,11 +74,10 @@ func (rl *RateLimiter) Allow(ip string) (allowed bool, retryAfter time.Duration)
 	}
 
 	// Calculate retry after time (estimate based on rate limit)
-	// This is approximate; actual time depends on token bucket state
 	reservation := client.limiter.Reserve()
 	if reservation.OK() {
 		retryAfter = reservation.Delay()
-		reservation.Cancel() // Cancel since we're rejecting
+		reservation.Cancel()
 	} else {
 		// If reservation failed, estimate based on rate
 		retryAfter = time.Duration(float64(time.Second) / float64(rl.limit))
@@ -92,7 +87,6 @@ func (rl *RateLimiter) Allow(ip string) (allowed bool, retryAfter time.Duration)
 }
 
 // cleanupClients removes clients that haven't been seen in the last hour
-// This prevents memory leaks from accumulating IPs
 func (rl *RateLimiter) cleanupClients() {
 	ticker := time.NewTicker(30 * time.Minute)
 	defer ticker.Stop()
@@ -109,7 +103,6 @@ func (rl *RateLimiter) cleanupClients() {
 	}
 }
 
-// getEnvInt reads an integer environment variable or returns default
 func getEnvInt(key string, defaultValue int) int {
 	val := os.Getenv(key)
 	if val == "" {

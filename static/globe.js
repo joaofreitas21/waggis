@@ -14,8 +14,9 @@ function initGlobe() {
     return;
   }
 
-  const width = container.clientWidth || 800;
-  const height = container.clientHeight || 600;
+  const width = container.clientWidth; 
+  const height = container.clientHeight; 
+
 
   globeInstance = new ENCOM.Globe(width, height, {
     font: "Inconsolata",

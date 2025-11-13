@@ -81,6 +81,47 @@
   #waggis-text {
     font-size: 1.75rem;
   }
+
+  #card-slot {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    max-height: none;
+  }
+
+  body.card-open #waggis-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    padding: 0.5rem 0;
+  }
+
+  .card-frame {
+    min-width: calc(100vw - 1rem);
+    max-width: calc(100vw - 1rem);
+  }
+
+  html.card-open,
+  body.card-open {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+
+  body.card-open #footer {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  #main-content {
+    overflow-y: visible;
+  }
 }
 
 .mini-card-image img {
@@ -92,16 +133,15 @@
   transform-origin: center top;
 }
 
-@media (max-width: 1024px) {
-  .globe-responsive {
-    transform: scale(0.85);
-  }
-}
 
 @media (max-width: 420px) {
   .globe-responsive {
-    transform: scale(0.78);
+    transform: scale(0.90);
   }
+  #footer {
+    bottom: 0.25rem;
+  }
+
 }
 
 .mt-18 {
@@ -158,6 +198,7 @@
     padding-bottom: 0;
     margin-top: 0.5rem;
   }
+
 }
 
 @media (max-height: 820px) {

@@ -32,7 +32,7 @@ func GetIP(w http.ResponseWriter, r *http.Request) {
 		return
 	}*/
 
-	
+
 	ip := GetClientIP(r)
 	log.Printf("Detected IP: %s", ip)
 	log.Printf("Headers - Fly-Client-IP: %s, X-Forwarded-For: %s, X-Real-IP: %s",

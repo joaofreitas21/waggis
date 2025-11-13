@@ -31,6 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const colorClass = tech.getAttribute("data-color") || "";
       if (!key) return;
 
+      const emailSlot = document.getElementById("email-form-slot");
+      if (emailSlot && !emailSlot.classList.contains("hidden")) {
+        if (typeof window.closeEmailForm === "function") {
+          window.closeEmailForm();
+        } else {
+          
+          emailSlot.innerHTML = "";
+          emailSlot.classList.add("hidden");
+          const globe = document.getElementById("globe-wrap");
+          if (globe) globe.classList.remove("hidden");
+          document.body.style.overflow = "";
+        }
+      }
+
       const slot = document.getElementById("card-slot");
 
       // Toggle close if same card is already open
@@ -53,7 +67,7 @@ async function showCardIntoSlot(key, colorClass) {
   const rest = document.getElementById("info-line");
   const globe = document.getElementById("globe-wrap");
 
-  // Apply color (text-* controls border-current/decoration-current inside the card)
+  
   slot.classList.forEach(c => {
     if (c.startsWith("text-")) slot.classList.remove(c);
   });
@@ -67,7 +81,17 @@ async function showCardIntoSlot(key, colorClass) {
   slot.classList.remove("hidden");
   if (rest) rest.classList.add("hidden");
   if (globe) globe.classList.add("hidden");
-  document.body.style.overflow = "hidden";
+
+
+  document.documentElement.classList.add("card-open");
+  document.body.classList.add("card-open");
+  
+ 
+  if (window.innerWidth >= 380) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
 }
 
 async function showItemOverlay(key, itemId) {
@@ -108,5 +132,7 @@ function closeCard() {
   if (rest) rest.classList.remove("hidden");
   if (globe) globe.classList.remove("hidden");
 
-  document.body.style.overflow ="";
+  document.documentElement.classList.remove("card-open");
+  document.body.classList.remove("card-open");
+  document.body.style.overflow = "";
 }
