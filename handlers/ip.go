@@ -35,8 +35,7 @@ func GetIP(w http.ResponseWriter, r *http.Request) {
 
 	ip := GetClientIP(r)
 	log.Printf("Detected IP: %s", ip)
-	log.Printf("Headers - Fly-Client-IP: %s, X-Forwarded-For: %s, X-Real-IP: %s",
-		r.Header.Get("Fly-Client-IP"),
+	log.Printf("Headers - X-Forwarded-For: %s, X-Real-IP: %s",
 		r.Header.Get("X-Forwarded-For"),
 		r.Header.Get("X-Real-IP"))
 
@@ -67,11 +66,6 @@ func GetIP(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetClientIP(r *http.Request) string {
-
-	flyIP := r.Header.Get("Fly-Client-IP")
-	if flyIP != "" {
-		return strings.TrimSpace(flyIP)
-	}
 
 	forwardedHeader := r.Header.Get("X-Forwarded-For")
 	if forwardedHeader != "" {
