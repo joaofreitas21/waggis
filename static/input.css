@@ -228,7 +228,6 @@
 
 @media (max-height: 760px) {
   .email-form-frame.responsive {
-    
     max-height: calc(100vh - 80px);
   }
 

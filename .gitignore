@@ -4,6 +4,5 @@ bin/
 tailwindcss
 .env
 .dockerignore
-Dockerfile
 .github/
 fly.toml
