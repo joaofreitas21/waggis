@@ -47,6 +47,9 @@ async function showEmailForm() {
     slot.classList.remove("hidden");
   }
 
+  document.documentElement.classList.add("email-open");
+  document.body.classList.add("email-open");
+
   // Hide globe, keep info-line visible
   if (globe) globe.classList.add("hidden");
   document.body.style.overflow = "hidden";
@@ -67,6 +70,9 @@ function closeEmailForm() {
     form.reset();
     closeEmailMessage();
   }
+
+  document.documentElement.classList.remove("email-open");
+  document.body.classList.remove("email-open");
 
   // Show globe, restore scroll
   if (globe) globe.classList.remove("hidden");

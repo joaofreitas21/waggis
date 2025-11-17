@@ -8,6 +8,7 @@ import (
 
 	"github.com/joaofreitas21/waggis/handlers"
 	"github.com/joaofreitas21/waggis/views"
+	
 	"github.com/joho/godotenv"
 )
 

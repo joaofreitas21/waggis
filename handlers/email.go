@@ -11,7 +11,7 @@ import (
 	"github.com/joaofreitas21/waggis/views"
 )
 
-// EmailResponse represents the JSON response for email submission
+
 type EmailResponse struct {
 	Success   bool   `json:"success"`
 	Message   string `json:"message,omitempty"`
@@ -73,12 +73,12 @@ func SendEmail(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Get SMTP configuration
+	// Get Resend configuration
 	config := services.GetEmailConfig()
 
 	// Validate SMTP configuration
-	if config.Host == "" || config.Username == "" || config.Password == "" || config.To == "" {
-		log.Println("SMTP configuration is incomplete")
+	if config.APIKey == "" || config.From == "" || config.To == "" {
+		log.Println("Email service is not fully configured (missing API key/from/to)")
 		response := EmailResponse{
 			Success: false,
 			Error:   "Email service is not configured. Please contact the administrator.",
@@ -88,7 +88,7 @@ func SendEmail(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Send email
+	// Send email via Resend
 	if err := services.SendContactEmail(
 		config,
 		emailReq.Name,
@@ -96,7 +96,7 @@ func SendEmail(w http.ResponseWriter, r *http.Request) {
 		emailReq.Subject,
 		emailReq.Message,
 	); err != nil {
-		log.Printf("Error sending email: %v", err)
+		log.Printf("Error sending email through Resend: %v", err)
 		response := EmailResponse{
 			Success: false,
 			Error:   "Failed to send email. Please try again later.",

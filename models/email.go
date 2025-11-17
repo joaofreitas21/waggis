@@ -59,7 +59,6 @@ func (e *EmailRequest) Validate() error {
 	return nil
 }
 
-// Sanitize removes potentially dangerous characters (basic sanitization)
 func (e *EmailRequest) Sanitize() {
 	// Remove null bytes and control characters
 	e.Name = strings.ReplaceAll(e.Name, "\x00", "")
