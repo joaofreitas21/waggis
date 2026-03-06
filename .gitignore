@@ -6,3 +6,4 @@ tailwindcss
 .dockerignore
 .github/
 fly.toml
+.vscode/

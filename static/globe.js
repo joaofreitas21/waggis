@@ -98,7 +98,7 @@ async function fetchUserMarker() {
 function addRandomSatellites(count){
     if(!globeInstance) return;
 
-    //8 satellites position added - enable as needed
+    
     const positions = [
         { lat: 45.0, lon: -75.0 },   // North America (upper-left quadrant)
         { lat: 50.0, lon: 10.0 },     // Europe (upper-right quadrant)

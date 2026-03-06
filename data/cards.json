@@ -94,5 +94,73 @@
                 "github": ""
             }
         }
+    },
+    "backend": {
+        "title": "Software Development",
+        "description": "Within the software development field, I have the most experience with back-end technologies such as Go, C#, and NodeJS. However, more recently I have started using TypeScript for my thesis project and NextJS for developing a Proof of Concept (PoC) for a personal project.",  
+        "items": {
+            "next": {
+                "title": "NextJs",
+                "title-card": "Studio Car Photoshoot",
+                "description": "A Proof of Concept (PoC) project for a professional studio car photoshoot. In this project, the goal was to use Nano Banana API to enhance and place the cars in a studio environment. This project remains in the planning stage, unsure if it will be developed further.",
+                "image": "/static/icons/car.jpg",
+                "github": "https://github.com/19jmrs/Proto_Stand"
+            },
+            "go": {
+                "title": "Go",
+                "title-card": "Portfolio Website",
+                "description": "A portfolio website for my personal projects and experiences. This website is built with Go to handle the server and Templ to generate the HTML pages. In this project, the server handles the API requests for the cards, IP geolocation, email form and rate limiting to prevent abuse.", 
+                "image":"/static/icons/w.jpg",
+                "github": "https://github.com/joaofreitas21/waggis"
+            },
+            "csharp": {
+                "title": "C#",
+                "title-card": "Hotel Management System",
+                "description": "A hotel management system for a university project. This project was my introduction to C# and Object-Oriented Programming (OOP) concepts.",
+                "image":"/static/icons/hotel.jpg",
+                "github": "https://github.com/joaofreitas21/16968_17632_LP2"
+            },
+            "typescript": {
+                "title": "TypeScript",
+                "title-card": "IVY 3 Plugin",
+                "description": "A thesis project for my university. I developed a plugin for IVY3 tool, available as a VSCode extension for interactive prototyping.",
+                "image":"/static/icons/inesctec.png",
+                "github": "http://ivy.di.uminho.pt/"
+            }
+        }
+    },
+    "offensive": {
+        "title": "Offensive Security",
+        "description": "Offensive security started as a hobby for me, watching Capture the Flag (CTF) and Bug Bounty Hunting (BBH) videos. Later, I started doing free labs like Portswigger's WebSecurity Academy, the Cisco Certificate in Ethical Hacking, and TryHackMe's cyber advent calendar.",
+        "items": {
+            "pswigger": {
+                "title": "Portswigger",
+                "title-card": "Portswigger WebSecurity Academy",
+                "description": "Portswigger's academy contains various learning paths for web security. I started with the Server-side vulnerabilites path that included the most common vulnerabilities found in the OWASP top10.",
+                "image": "/static/icons/portswigger.png",
+                "github": ""
+            },
+            "cisco": {
+                "title": "Cisco",
+                "title-card": "Cisco Ethical Hacking Course",
+                "description": "Cisco launched a free course within Ethical hacking, so in 2025 I decided to try it out and complete the course without taking the certification exam. It was a very complete course, a bit outside my scope with some modules regarding IoT and mobile exploitation.",
+                "image":"/static/icons/cisco.png",
+                "github": ""
+            },
+            "item4": {
+                "title": "TryHackMe",
+                "title-card": "TryHackMe",
+                "description": "I am a member of TryHackMe since 2023, when I started my journey in the world of cybersecurity. It all started with the Cyber Advent Calendar, where I solved daily challenges and learned about the basics of cybersecurity. Right now, i am in the process of completing rooms and writing in my blog.",
+                "image":"/static/icons/tryhackme.jpg",
+                "github": "https://tryhackme.com/p/waggis"
+            },
+            "item5": {
+                "title": "CTF-Blog",
+                "title-card": "CTF-Blog",
+                "description": "COMING SOON!",
+                "image":"/static/icons/ctff.png",
+                "github": ""
+            }
+        }
     }
 }

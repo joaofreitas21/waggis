@@ -78,11 +78,11 @@ func SendContactEmail(config *EmailConfig, name, email, subject, message string)
 	// Format email body
 	body := fmt.Sprintf(`New contact form submission via waggis website:
 
-NAME: %s
-EMAIL: %s
-SUBJECT: %s
+[NAME]: %s
+[EMAIL]: %s
+[SUBJECT]: %s
 
-MESSAGE:
+[MESSAGE]:
 %s
 `, name, email, subject, message)
 

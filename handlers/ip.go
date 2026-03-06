@@ -17,21 +17,6 @@ type IPResponse struct {
 }
 
 func GetIP(w http.ResponseWriter, r *http.Request) {
-	// Test mode (uncomment if needed)
-	/*testMode := os.Getenv("GLOBE_TEST_MODE") == "true"
-	if testMode {
-		response := IPResponse{
-			IP:       "127.0.0.1",
-			Latitude: 40.7128,
-			Longitude: -74.0060,
-			City:     "New York",
-			Country:  "US",
-		}
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(response)
-		return
-	}*/
-
 
 	ip := GetClientIP(r)
 	log.Printf("Detected IP: %s", ip)

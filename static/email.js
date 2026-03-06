@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let isEmailFormOpen = false;
 
 
-  // Handle click on "Email me!" button
+  // Handle click on contact button
   document.body.addEventListener("click", async function (e) {
     const emailBtn = e.target.closest("[data-action='email']");
     if (emailBtn) {
@@ -27,7 +27,7 @@ async function showEmailForm() {
 
   if (!slot) return;
 
-  // Get color from email button or default to purple
+
   const colorClass = emailBtn?.getAttribute("data-color") || "text-purple-400";
 
   // Apply color to slot
@@ -40,10 +40,6 @@ async function showEmailForm() {
   const resp = await fetch("/email-form");
   if (resp.ok) {
     slot.innerHTML = await resp.text();
-    slot.classList.remove("hidden");
-  } else {
-    slot.innerHTML =
-      "<div class='text-red-400 p-6'>Failed to load form :(</div>";
     slot.classList.remove("hidden");
   }
 

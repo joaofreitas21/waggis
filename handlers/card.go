@@ -88,6 +88,6 @@ func ServeCardItem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	views.ItemCard(item.Title, item.Description, item.Github, item.Image).Render(r.Context(), w)
+	views.ItemCard(item.Title, item.TitleCard, item.Description, item.Github, item.Image).Render(r.Context(), w)
 
 }

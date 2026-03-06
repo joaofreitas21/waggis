@@ -8,7 +8,7 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func ItemCard(itemTitle string, itemDescription string, github string, image string) templ.Component {
+func ItemCard(itemTitle string, itemTitleCard string, itemDescription string, github string, image string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -29,20 +29,20 @@ func ItemCard(itemTitle string, itemDescription string, github string, image str
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"item-card-overlay-content bg-black/90 border-2 border-current rounded-2xl z-51 p-8 w-full max-w-xl min-h-[16rem] shadow-2xl flex flex-col items-center justify-center relative animate-fadein\"><!-- Close button --><button type=\"button\" class=\"absolute top-4 right-4 text-current hover:opacity-80 text-2xl font-bold item-overlay-close\" onclick=\"closeItemCardOverlay()\" aria-label=\"Close\">×</button><!-- Item Title --><h3 class=\"text-2xl font-mono text-white text-center mb-4 underline decoration-current\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"item-card-overlay-content bg-black/90 border-2 border-current rounded-2xl z-51 p-8 w-full max-w-xl min-h-[16rem] shadow-2xl flex flex-col items-center justify-center relative animate-fadein\"><button type=\"button\" class=\"absolute top-4 right-4 text-current hover:opacity-80 text-2xl font-bold item-overlay-close\" onclick=\"closeItemCardOverlay()\" aria-label=\"Close\">×</button><h3 class=\"text-2xl font-mono text-white text-center mb-4 underline decoration-current\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(itemTitle)
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(itemTitleCard)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/item_card.templ`, Line: 16, Col: 102}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/item_card.templ`, Line: 16, Col: 106}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</h3><!-- Description --><div class=\"text-gray-200 text-center font-mono mb-6 whitespace-pre-line pl-2 pr-2\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</h3><div class=\"text-gray-200 text-center font-mono mb-6 whitespace-pre-line pl-2 pr-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -55,7 +55,7 @@ func ItemCard(itemTitle string, itemDescription string, github string, image str
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><!-- Centered GitHub link (only if present) -->")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

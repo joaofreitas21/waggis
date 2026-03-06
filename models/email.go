@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// EmailRequest represents the incoming email form data
+
 type EmailRequest struct {
 	Name    string `json:"name"`
 	Email   string `json:"email"`
@@ -14,9 +14,9 @@ type EmailRequest struct {
 	Message string `json:"message"`
 }
 
-// Validate performs validation on the email request
+
 func (e *EmailRequest) Validate() error {
-	// Trim whitespace
+	
 	e.Name = strings.TrimSpace(e.Name)
 	e.Email = strings.TrimSpace(e.Email)
 	e.Subject = strings.TrimSpace(e.Subject)

@@ -26,7 +26,6 @@ function step() {
         i++;
         setTimeout(step, anim[i].ms);
     } else {
-        // Animation done, trigger transition
         setTimeout(moveToTop, 500);
     }
 }
