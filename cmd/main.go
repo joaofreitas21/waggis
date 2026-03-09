@@ -40,8 +40,16 @@ func main() {
 
 	// Serve landing page at "/"
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		views.Landing().Render(r.Context(), w)
+		if r.URL.Path == "/" {
+			views.Landing().Render(r.Context(), w)
+			return
+		}
+
+		w.WriteHeader(http.StatusNotFound)
+		views.NotFound().Render(r.Context(), w)
+		
 	})
+
 
 	port := os.Getenv("PORT")
 	if port == "" {

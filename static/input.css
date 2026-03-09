@@ -148,6 +148,13 @@
 
 }
 
+@media (max-width: 500px) {
+  #notfound-text {
+    font-size: 2.5rem;
+  }
+
+}
+
 .mt-18 {
   margin-top: 4.5rem;
 }
@@ -178,11 +185,10 @@
   #footer {
     padding: 1rem;
     bottom: 0;
-    position: absolute !important;
+    position: relative !important;
     right: auto !important;
     text-align: center;
   }
-
 
   #main-content {
     overflow-y: visible;
@@ -192,7 +198,6 @@
     overflow-y: auto !important;
     overflow-x: hidden !important;
   }
-
 
   #waggis-container {
     position: absolute !important;

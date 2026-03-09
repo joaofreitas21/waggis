@@ -39,9 +39,12 @@ function moveToTop() {
 
     setTimeout(() => {
         const mainContent = document.getElementById('main-content');
+        const footer = document.getElementById('footer');
         if (mainContent) {
             mainContent.classList.remove('opacity-0');
             mainContent.classList.add('opacity-100');
+            footer.classList.remove('opacity-0');
+            footer.classList.add('opacity-100');
         }
 
         if(typeof showGlobe === 'function') {
