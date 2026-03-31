@@ -6,6 +6,8 @@ module.exports = {
       "./static/cards.js",
       "./static/email.js",
       "./static/animation.js",
+      "./**/*.go",
+      "./**/*.templ",
       "./static/ctf.js"
     ],
     exclude: [
