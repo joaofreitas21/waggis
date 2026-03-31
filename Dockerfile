@@ -1,3 +1,12 @@
+FROM node:20-alpine AS assets
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY tailwind.config.js ./
+COPY static ./static
+COPY views ./views
+RUN npx tailwindcss -i ./static/input.css -o ./static/styles.css --minify
+
 # Build stage
 FROM golang:1.25-alpine AS builder
 
@@ -12,7 +21,7 @@ RUN go mod download
 
 
 COPY . .
-
+COPY --from=assets /app/static/styles.css ./static/styles.css
 
 RUN templ generate
 
