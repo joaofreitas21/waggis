@@ -7,7 +7,6 @@ module.exports = {
       "./static/email.js",
       "./static/animation.js",
       "./**/*.go",
-      "./**/*.templ",
       "./static/ctf.js"
     ],
     exclude: [
