@@ -1,0 +1,292 @@
+[
+  {
+    "slug": "htb-lame",
+    "title": "Hack The Box — Lame",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-01-08",
+    "tags": ["Samba", "CVE-2007-2447", "Metasploit", "Linux"],
+    "complete": true,
+    "description": "Classic entry-level box exploiting a vulnerable Samba version via an unauthenticated command injection flaw."
+  },
+  {
+    "slug": "htb-legacy",
+    "title": "Hack The Box — Legacy",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-01-15",
+    "tags": ["SMB", "EternalBlue", "MS08-067", "Windows", "Metasploit"],
+    "complete": true,
+    "description": "Windows XP machine vulnerable to MS08-067 and EternalBlue. A staple for learning Windows exploitation fundamentals."
+  },
+  {
+    "slug": "htb-blue",
+    "title": "Hack The Box — Blue",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-02-03",
+    "tags": ["SMB", "EternalBlue", "MS17-010", "Windows"],
+    "complete": true,
+    "description": "Windows 7 box vulnerable to EternalBlue (MS17-010). Great for understanding the NSA exploit without Metasploit."
+  },
+  {
+    "slug": "htb-jerry",
+    "title": "Hack The Box — Jerry",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-02-18",
+    "tags": ["Tomcat", "Default Credentials", "WAR Upload", "Windows", "Web"],
+    "complete": true,
+    "description": "Apache Tomcat with default credentials allowing a malicious WAR file upload for remote code execution."
+  },
+  {
+    "slug": "htb-netmon",
+    "title": "Hack The Box — Netmon",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-03-01",
+    "tags": ["PRTG", "FTP", "CVE-2018-9276", "Windows", "Web"],
+    "complete": true,
+    "description": "PRTG Network Monitor exposed via anonymous FTP. Exploiting a command injection in the alert notification feature."
+  },
+  {
+    "slug": "htb-bank",
+    "title": "Hack The Box — Bank",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-03-20",
+    "tags": ["DNS", "LFI", "File Upload", "Linux", "Web", "PHP"],
+    "complete": true,
+    "description": "Linux web box requiring DNS enumeration to discover a virtual host, then bypassing upload filters to get a shell."
+  },
+  {
+    "slug": "htb-active",
+    "title": "Hack The Box — Active",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-04-05",
+    "tags": ["Active Directory", "Kerberoasting", "GPP", "SMB", "Windows"],
+    "complete": true,
+    "description": "Active Directory box abusing Group Policy Preferences password decryption and Kerberoasting to escalate to Domain Admin."
+  },
+  {
+    "slug": "htb-devel",
+    "title": "Hack The Box — Devel",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-04-22",
+    "tags": ["FTP", "IIS", "Windows", "MS11-046", "Privilege Escalation"],
+    "complete": true,
+    "description": "Writable FTP root mapped to an IIS web directory. Initial foothold via ASPX webshell, privilege escalation with a kernel exploit."
+  },
+  {
+    "slug": "htb-bastard",
+    "title": "Hack The Box — Bastard",
+    "platform": "HackTheBox",
+    "difficulty": "medium",
+    "date": "2024-05-10",
+    "tags": ["Drupal", "CVE-2014-3704", "Drupalgeddon", "Windows", "Web"],
+    "complete": true,
+    "description": "Drupal 7 CMS vulnerable to Drupalgeddon SQL injection. Privilege escalation via MS15-051 token impersonation."
+  },
+  {
+    "slug": "htb-beep",
+    "title": "Hack The Box — Beep",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-05-28",
+    "tags": ["Elastix", "LFI", "FreePBX", "Linux", "Web", "VOIP"],
+    "complete": true,
+    "description": "Elastix VOIP server with multiple attack vectors including LFI and Shellshock. Multiple paths to root make it great for practice."
+  },
+  {
+    "slug": "htb-shocker",
+    "title": "Hack The Box — Shocker",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-06-12",
+    "tags": ["Shellshock", "CGI", "Bash", "Linux", "sudo"],
+    "complete": true,
+    "description": "Web server running CGI scripts vulnerable to Shellshock (CVE-2014-6271). Privilege escalation via sudo perl."
+  },
+  {
+    "slug": "htb-nibbles",
+    "title": "Hack The Box — Nibbles",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-06-30",
+    "tags": ["NibbleBlog", "File Upload", "Linux", "sudo", "Web", "PHP"],
+    "complete": true,
+    "description": "NibbleBlog CMS with a file upload vulnerability after guessing weak credentials. Sudo misconfiguration leads to root."
+  },
+  {
+    "slug": "htb-grandpa",
+    "title": "Hack The Box — Grandpa",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-07-14",
+    "tags": ["WebDAV", "IIS", "CVE-2017-7269", "Windows", "Token Impersonation"],
+    "complete": true,
+    "description": "IIS 6.0 running WebDAV vulnerable to a buffer overflow. Privilege escalation via token kidnapping / Churrasco."
+  },
+  {
+    "slug": "htb-valentine",
+    "title": "Hack The Box — Valentine",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-08-01",
+    "tags": ["Heartbleed", "OpenSSL", "CVE-2014-0160", "Linux", "tmux"],
+    "complete": true,
+    "description": "Linux box themed around the Heartbleed vulnerability. Memory leak leaks an encoded SSH key. Root via tmux session hijacking."
+  },
+  {
+    "slug": "htb-poison",
+    "title": "Hack The Box — Poison",
+    "platform": "HackTheBox",
+    "difficulty": "medium",
+    "date": "2024-08-19",
+    "tags": ["LFI", "Log Poisoning", "PHP", "FreeBSD", "VNC", "SSH Tunneling"],
+    "complete": true,
+    "description": "FreeBSD web server with LFI leading to log poisoning for RCE. Root via SSH port forwarding to an exposed VNC session."
+  },
+  {
+    "slug": "htb-cronos",
+    "title": "Hack The Box — Cronos",
+    "platform": "HackTheBox",
+    "difficulty": "medium",
+    "date": "2024-09-05",
+    "tags": ["DNS Zone Transfer", "SQLi", "Command Injection", "Linux", "Cron", "Web"],
+    "complete": true,
+    "description": "DNS zone transfer reveals subdomains. SQLi bypasses login, command injection gives shell. Root via writable cron job."
+  },
+  {
+    "slug": "htb-solidstate",
+    "title": "Hack The Box — SolidState",
+    "platform": "HackTheBox",
+    "difficulty": "medium",
+    "date": "2024-09-22",
+    "tags": ["James Mail Server", "RCE", "Linux", "Cron", "Restricted Shell"],
+    "complete": true,
+    "description": "Apache James mail server with default credentials allows setting a malicious mail forward for RCE. Writable cron script leads to root."
+  },
+  {
+    "slug": "htb-sunday",
+    "title": "Hack The Box — Sunday",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-10-08",
+    "tags": ["Finger", "Solaris", "Brute Force", "sudo", "wget"],
+    "complete": true,
+    "description": "Solaris box using the old finger protocol for user enumeration. SSH brute force and sudo wget abuse for privilege escalation."
+  },
+  {
+    "slug": "htb-node",
+    "title": "Hack The Box — Node",
+    "platform": "HackTheBox",
+    "difficulty": "medium",
+    "date": "2024-10-25",
+    "tags": ["Node.js", "MongoDB", "API", "Linux", "Buffer Overflow", "Web"],
+    "complete": true,
+    "description": "Node.js app leaking credentials via an unprotected API endpoint. Privilege escalation via a custom SUID binary buffer overflow."
+  },
+  {
+    "slug": "htb-forest",
+    "title": "Hack The Box — Forest",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-11-10",
+    "tags": ["Active Directory", "AS-REP Roasting", "DCSync", "BloodHound", "Windows", "WinRM"],
+    "complete": true,
+    "description": "Active Directory machine exploitable via AS-REP Roasting against accounts without pre-auth. DCSync via Exchange Windows Permissions ACL abuse."
+  },
+  {
+    "slug": "htb-sauna",
+    "title": "Hack The Box — Sauna",
+    "platform": "HackTheBox",
+    "difficulty": "easy",
+    "date": "2024-11-28",
+    "tags": ["Active Directory", "AS-REP Roasting", "DCSync", "AutoLogon", "Windows", "WinRM"],
+    "complete": true,
+    "description": "User enumeration from a corporate website leads to AS-REP Roasting. AutoLogon credentials in registry allow lateral movement to DCSync."
+  },
+  {
+    "slug": "htb-bucket",
+    "title": "Hack The Box — Bucket",
+    "platform": "HackTheBox",
+    "difficulty": "medium",
+    "date": "2024-12-14",
+    "tags": ["AWS S3", "DynamoDB", "Linux", "Web", "Cloud"],
+    "complete": true,
+    "description": "Local AWS environment with an exposed S3 bucket allowing webshell upload. DynamoDB credential leak leads to lateral movement and root."
+  },
+  {
+    "slug": "thm-kenobi",
+    "title": "TryHackMe — Kenobi",
+    "platform": "TryHackMe",
+    "difficulty": "easy",
+    "date": "2024-12-28",
+    "tags": ["Samba", "ProFTPd", "NFS", "Linux", "SUID", "Path Hijacking"],
+    "complete": true,
+    "description": "Enumerating Samba shares and exploiting a ProFTPd vulnerability to copy an SSH key. SUID binary path hijacking for root."
+  },
+  {
+    "slug": "thm-steel-mountain",
+    "title": "TryHackMe — Steel Mountain",
+    "platform": "TryHackMe",
+    "difficulty": "easy",
+    "date": "2025-01-10",
+    "tags": ["HFS", "CVE-2014-6287", "Windows", "Metasploit", "Unquoted Service Path"],
+    "complete": true,
+    "description": "HttpFileServer 2.3 vulnerable to remote code execution. Privilege escalation via an unquoted service path."
+  },
+  {
+    "slug": "thm-alfred",
+    "title": "TryHackMe — Alfred",
+    "platform": "TryHackMe",
+    "difficulty": "easy",
+    "date": "2025-01-24",
+    "tags": ["Jenkins", "Windows", "Token Impersonation", "PowerShell", "Web"],
+    "complete": true,
+    "description": "Jenkins with default credentials allows running a build job to execute a PowerShell reverse shell. Token impersonation for SYSTEM."
+  },
+  {
+    "slug": "thm-hackpark",
+    "title": "TryHackMe — HackPark",
+    "platform": "TryHackMe",
+    "difficulty": "medium",
+    "date": "2025-02-08",
+    "tags": ["BlogEngine.NET", "CVE-2019-6714", "Windows", "Hydra", "Unquoted Service Path"],
+    "complete": true,
+    "description": "Brute forcing BlogEngine.NET login with Hydra, then exploiting a directory traversal RCE. Privilege escalation via unquoted service path."
+  },
+  {
+    "slug": "thm-gamezone",
+    "title": "TryHackMe — Game Zone",
+    "platform": "TryHackMe",
+    "difficulty": "medium",
+    "date": "2025-02-22",
+    "tags": ["SQLi", "sqlmap", "John", "SSH Tunneling", "Webmin", "Linux"],
+    "complete": true,
+    "description": "SQL injection for authentication bypass, sqlmap to dump hashes, and SSH tunneling to reach an internal Webmin instance for root."
+  },
+  {
+    "slug": "thm-skynet",
+    "title": "TryHackMe — Skynet",
+    "platform": "TryHackMe",
+    "difficulty": "easy",
+    "date": "2025-03-07",
+    "tags": ["Samba", "SquirrelMail", "RFI", "Linux", "Cron", "Cuppa CMS"],
+    "complete": true,
+    "description": "Samba share leaks credentials for a SquirrelMail instance. Remote file inclusion in Cuppa CMS. Root via a wildcard cron tar exploit."
+  },
+  {
+    "slug": "thm-anonymous",
+    "title": "TryHackMe — Anonymous",
+    "platform": "TryHackMe",
+    "difficulty": "hard",
+    "date": "2025-03-18",
+    "tags": ["FTP", "Samba", "Cron", "Linux", "SUID"],
+    "complete": true,
+    "description": "Anonymous FTP access reveals a writable cron script. SUID enumeration with find provides an easy path to root."
+  }
+]

@@ -157,9 +157,9 @@
             "item5": {
                 "title": "CTF-Blog",
                 "title-card": "CTF-Blog",
-                "description": "COMING SOON!",
+                "description": "Still in BETA.. Try it out now!",
                 "image":"/static/icons/ctff.png",
-                "github": ""
+                "github": "https://waggis.website/ctf"
             }
         }
     }

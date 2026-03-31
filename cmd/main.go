@@ -27,10 +27,14 @@ func main() {
 		log.Println("Error loading .env")
 	}
 
-	// Serve static files
+	handlers.LoadCtfMetadata()
+	
 	fs := http.FileServer(http.Dir(filepath.Join(".", "static")))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	
+	http.HandleFunc("/ctf", handlers.ServeCTFPage)
+	http.HandleFunc("/api/ctf/search", handlers.SearchCTFWriteups)
+	http.HandleFunc("/ctf/report", handlers.ServeCTFReport)
 
 	http.HandleFunc("/api/ip", handlers.GetIP)
 
@@ -53,13 +57,12 @@ func main() {
 		if r.URL.Path == "/" {
 			views.Landing().Render(r.Context(), w)
 			return
-		}
+		} 
 
 		w.WriteHeader(http.StatusNotFound)
 		views.NotFound().Render(r.Context(), w)
 		
 	})
-
 
 	port := os.Getenv("PORT")
 	if port == "" {

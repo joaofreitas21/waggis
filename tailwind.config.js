@@ -2,10 +2,11 @@
 module.exports = {
   content: {
     files: [
-      "./views/**/*.{templ,html}", // All Templ and HTML files in views/
+      "./views/**/*.{templ,html}", 
       "./static/cards.js",
       "./static/email.js",
       "./static/animation.js",
+      "./static/ctf.js"
     ],
     exclude: [
       "**/node_modules/**",
@@ -16,5 +17,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

@@ -1,0 +1,62 @@
+package views
+
+templ CTFWriteupCards(cards []CtfCard, activeTag string) {
+	if len(cards) == 0 {
+		<div class="col-span-full text-center text-white/40 font-mono text-sm py-12">
+			// no writeups match your query
+		</div>
+	} else {
+		for _, w := range cards {
+			<div
+				class="group relative bg-black/70 border border-white/10 rounded-xl p-5 cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.03] overflow-hidden"
+				data-slug={ w.Slug }
+			>
+				<div class="absolute left-0 top-0 bottom-0 w-[3px] bg-white/10 rounded-l-xl transition-colors duration-200 group-hover:bg-white/40"></div>
+				<div class="text-white/40 text-[10px] tracking-widest uppercase font-mono mb-1 pl-1">
+					{ w.Platform }
+				</div>
+				<div class="text-white text-sm font-bold font-mono mb-3 pl-1 leading-snug">
+					{ w.Title }
+				</div>
+				<div class="flex items-center gap-2 mb-3 pl-1 flex-wrap">
+					if w.Difficulty == "easy" {
+						<span class="text-[10px] font-mono px-2 py-0.5 rounded border bg-green-400/10 border-green-400/30 text-green-400">easy</span>
+					} else if w.Difficulty == "medium" {
+						<span class="text-[10px] font-mono px-2 py-0.5 rounded border bg-yellow-400/10 border-yellow-400/30 text-yellow-400">medium</span>
+					} else if w.Difficulty == "hard" {
+						<span class="text-[10px] font-mono px-2 py-0.5 rounded border bg-red-400/10 border-red-400/30 text-red-400">hard</span>
+					} else {
+						<span class="text-[10px] font-mono px-2 py-0.5 rounded border bg-white/5 border-white/10 text-white/50">{ w.Difficulty }</span>
+					}
+					<span class="text-white/30 text-[10px] font-mono">{ w.DateFormatted }</span>
+				</div>
+				<div class="flex flex-wrap gap-1.5 pl-1">
+					for _, t := range w.Tags {
+						if t.Active {
+							<button
+								type="button"
+								class="text-[10px] font-mono px-2 py-0.5 rounded border border-white/40 bg-white/10 text-white transition-colors duration-150"
+								data-tag={ t.Name }
+							>
+								{ t.Name }
+							</button>
+						} else {
+							<button
+								type="button"
+								class="text-[10px] font-mono px-2 py-0.5 rounded border border-white/10 bg-transparent text-white/50 hover:bg-white/10 hover:border-white/30 hover:text-white transition-colors duration-150"
+								data-tag={ t.Name }
+							>
+								{ t.Name }
+							</button>
+						}
+					}
+				</div>
+				if w.Description != "" {
+					<div class="mt-3 pl-1 text-white/30 text-[11px] font-mono leading-relaxed line-clamp-3">
+						{"// "}{ w.Description }
+					</div>
+				}
+			</div>
+		}
+	}
+}

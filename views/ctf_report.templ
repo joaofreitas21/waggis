@@ -1,0 +1,43 @@
+package views
+
+templ CTFReportPage(slug string, renderedHTML string) {
+  <!DOCTYPE html>
+  <html lang="en" class="bg-black min-h-screen font-mono">
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>{ slug } — writeup</title>
+      <link href="/static/styles.css" rel="stylesheet"/>
+    </head>
+    <body class="bg-black min-h-screen">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+ 
+        <a href="/ctf" class="inline-flex items-center gap-1 text-white/30 hover:text-white font-mono text-xs transition-colors duration-150 mb-10">
+          &lt; back to writeups
+        </a>
+ 
+        <article
+          class="prose prose-invert prose-sm sm:prose-base
+                 prose-headings:font-mono prose-headings:font-bold prose-headings:text-white
+                 prose-h1:text-2xl prose-h1:border-b prose-h1:border-white/10 prose-h1:pb-3
+                 prose-h2:text-lg prose-h2:text-white/90
+                 prose-h3:text-base prose-h3:text-white/80
+                 prose-p:text-white/60 prose-p:leading-relaxed
+                 prose-a:text-white prose-a:underline prose-a:decoration-white/30 hover:prose-a:decoration-white
+                 prose-strong:text-white prose-strong:font-bold
+                 prose-code:text-white/80 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+                 prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-xl prose-pre:text-xs
+                 prose-blockquote:border-l-2 prose-blockquote:border-white/20 prose-blockquote:text-white/40 prose-blockquote:not-italic
+                 prose-img:rounded-xl prose-img:border prose-img:border-white/10
+                 prose-hr:border-white/10
+                 prose-li:text-white/60
+                 prose-table:text-white/60 prose-thead:border-white/10 prose-tbody:border-white/10 prose-tr:border-white/10
+                 max-w-none"
+        >
+          @templ.Raw(renderedHTML)
+        </article>
+ 
+      </div>
+    </body>
+  </html>
+}

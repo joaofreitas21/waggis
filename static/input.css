@@ -204,4 +204,14 @@
   }
 }
 
+@keyframes blink { 50% { opacity: 0; } }
+.animate-blink {
+  display: inline-block;
+  width: 8px; height: 14px;
+  background: #444;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
 
