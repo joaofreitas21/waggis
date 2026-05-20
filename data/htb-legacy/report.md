@@ -84,7 +84,7 @@ Description of privilege escalation method:
 # Privesc commands
 ```
 
-![Root access](/ctf/assets/htb-legacy/cisco.png)
+![Root access](/static/icons/cisco.png)
 
 Root flag: `ROOT_FLAG_HERE`
 

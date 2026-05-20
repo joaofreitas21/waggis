@@ -94,6 +94,7 @@ grid.addEventListener("click", (e) => {
   if (cardEl) {
     const slug = cardEl.getAttribute("data-slug");
     if (slug) window.location.href = `/ctf/report?slug=${encodeURIComponent(slug)}`;
+
   }
 });
 

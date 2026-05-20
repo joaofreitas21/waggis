@@ -173,23 +173,30 @@ func matchesTag(m views.CtfMetadata, tagLower string) bool {
 func ServeCTFReport(w http.ResponseWriter, r *http.Request) {
 	slug := strings.TrimSpace(r.URL.Query().Get("slug"))
 	if slug == "" {
-		http.Error(w, "missing slug", http.StatusBadRequest)
+		w.WriteHeader(http.StatusNotFound)
+		views.NotFound().Render(r.Context(), w)
+		//http.Error(w, "missing slug", http.StatusBadRequest)
 		return
 	}
  
 	if strings.ContainsAny(slug, "/\\.") {
-		http.Error(w, "invalid slug", http.StatusBadRequest)
+		w.WriteHeader(http.StatusNotFound)
+		views.NotFound().Render(r.Context(), w)
+		//http.Error(w, "invalid slug", http.StatusBadRequest)
 		return
 	}
  
 	src, err := os.ReadFile(filepath.Join("data", slug, "report.md"))
 	if err != nil {
-		http.Error(w, "report not found", http.StatusNotFound)
+		w.WriteHeader(http.StatusNotFound)
+		views.NotFound().Render(r.Context(), w)
+		//http.Error(w, "report not found", http.StatusNotFound)
 		return
 	}
  
 	var buf bytes.Buffer
 	if err := md.Convert(src, &buf); err != nil {
+		
 		http.Error(w, "failed to render report", http.StatusInternalServerError)
 		return
 	}
