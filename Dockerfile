@@ -3,12 +3,12 @@ FROM golang:1.25-alpine AS builder
 
 WORKDIR /app
 
-# Install templ
-RUN go install github.com/a-h/templ/cmd/templ@$(go list -m -f '{{.Version}}' github.com/a-h/templ)
 
 # Copy go mod files 
 COPY go.mod go.sum ./
 RUN go mod download
+
+RUN go install github.com/a-h/templ/cmd/templ@$(go list -m -f '{{.Version}}' github.com/a-h/templ)
 
 
 COPY . .
